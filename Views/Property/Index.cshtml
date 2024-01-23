@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!-- Views/Property/Index.cshtml -->
+@model realtor_dotnet_core_mvc.Models.Property.PropertyViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Details</title>
+</head>
+<body>
+<h2>Property Details</h2>
+
+<dl>
+    <dt>Id:</dt>
+    <dd>@Model.Property.Id</dd>
+
+    <!-- Add other property fields here as needed -->
+
+    <dt>Land Type:</dt>
+    <dd>@Model.LandType.LandTypeName</dd>
+
+    <dt>Property Type:</dt>
+    <dd>@Model.PropertyType.PropertyTypeName</dd>
+</dl>
+
+<h3>Attachments</h3>
+<ul>
+    @foreach (var attachment in Model.Attachments)
+    {
+        <li>@attachment.ImageUrl</li>
+    }
+</ul>
+</body>
+</html>

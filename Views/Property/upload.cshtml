@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Upload CSV";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.SuccessMessage
+    </div>
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Select CSV File:</label>
+        <input type="file" class="form-control-file" name="file" id="file" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
